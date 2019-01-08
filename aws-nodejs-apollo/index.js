@@ -25,10 +25,14 @@ const resolvers = {
     },
     Mutation: {
         validateAndAddUser: async (_, { name, balance }) => {
+            //begin transaction
             return await sequelize.transaction(async (t) => {
                 try {
+                    //fetch min amount
                     const minAmount = await MinAmount.findOne({}, {transaction: t});
+                    //check balance
                     if (balance >= minAmount.amount) {
+                        //create user if balance is greater
                         const user = await User.create({
                             name: name,
                             balance: balance
