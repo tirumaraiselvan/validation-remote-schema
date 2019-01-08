@@ -77,19 +77,19 @@ Now that you have run the graphql service locally and made any required changes,
 
 1) Create a Lambda function by clicking on Create Function on your Lambda console. Choose the `NodeJS 8.10` runtime and `lambda_basic_execution` role.
 
-![create-lambda](_assets/create-lambda.png)
+![create-lambda](../_assets/create-lambda.png)
 
 2) In the next page (or Lambda instance page), select API Gateway as the trigger.
 
-![create-api-gateway](_assets/create-api-gateway.png)
+![create-api-gateway](../_assets/create-api-gateway.png)
 
 3) Configure the API Gateway as you wish. The simplest configuration is shown below.
 
-![configure-api-gateway](_assets/configure-api-gateway.png)
+![configure-api-gateway](../_assets/configure-api-gateway.png)
 
 Save your changes. You will receive a HTTPS endpoint for your lambda.
 
-![output-api-gateway](_assets/output-api-gateway.png)
+![output-api-gateway](../_assets/output-api-gateway.png)
 
 If you go to the endpoint, you will receive a "Hello from Lambda!" message. This is because we haven't uploaded any code yet!
 
