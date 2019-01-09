@@ -19,6 +19,12 @@ const typeDefs = gql`
   }
 `;
 
+
+// We consider a user schema where a user can be added only if a custom validation passes.
+// The custom validation involves fetching a min amount from a table
+// and checking if the user balance is greater than the min amount.
+// This will be done in a transaction.
+
 const resolvers = {
     Query: {
         hello: () => "world",

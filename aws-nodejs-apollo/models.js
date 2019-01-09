@@ -6,22 +6,28 @@ const sequelize = new Sequelize(
     POSTGRES_CONNECTION_STRING, {}
 );
 
-const User = sequelize.define('user', {
-    id: { type: Sequelize.INTEGER, autoIncrement: true, primaryKey: true },
-    name: Sequelize.TEXT,
-    balance: Sequelize.INTEGER
-},
-                              {
-                                  timestamps: false
-                              });
+const User = sequelize.define(
+    'user',
+    {
+        id: { type: Sequelize.INTEGER, autoIncrement: true, primaryKey: true },
+        name: Sequelize.TEXT,
+        balance: Sequelize.INTEGER
+    },
+    {
+        timestamps: false
+    }
+);
 
-const MinAmount = sequelize.define('min_amount', {
-    amount: Sequelize.INTEGER
-},
-                                   {
-                                       freezeTableName: true,
-                                       timestamps: false
-                                   });
+const MinAmount = sequelize.define(
+    'min_amount',
+    {
+        amount: Sequelize.INTEGER
+    },
+    {
+        freezeTableName: true,
+        timestamps: false
+    }
+);
 
 MinAmount.removeAttribute('id');
 
